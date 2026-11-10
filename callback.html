@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Authorization complete - Orbit Daily Studio</title>
+<style>
+:root{--bg:#fbfbfa;--fg:#1c1c1a;--mut:#5e5e59;--line:#e2e2dd}
+@media (prefers-color-scheme:dark){:root{--bg:#121211;--fg:#ecece8;--mut:#a3a39b;--line:#2e2e2b}}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,sans-serif}
+main{max-width:42rem;margin:0 auto;padding:3rem 1rem}
+h1{font-size:1.6rem}code{display:block;padding:1rem;border:1px solid var(--line);word-break:break-all;margin:1rem 0}
+small{color:var(--mut)}a{color:inherit}
+</style>
+</head>
+<body>
+<main>
+<h1>Authorization complete</h1>
+<p>Copy the code below into the Orbit Daily Studio tool on your computer. Nothing on this page is sent anywhere.</p>
+<code id="out">No code in this address.</code>
+<p><small><a href="index.html">Orbit Daily Studio</a></small></p>
+</main>
+<script>
+var p = new URLSearchParams(location.search);
+var c = p.get("code");
+document.getElementById("out").textContent = c || p.get("error_description") || "No code in this address.";
+</script>
+</body>
+</html>
